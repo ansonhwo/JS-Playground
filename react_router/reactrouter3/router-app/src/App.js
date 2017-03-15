@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { About, Home, Topic } from './components'
 
 const BasicExample = ({ test, handleClick }) => (
   <Router>
@@ -22,18 +23,6 @@ const BasicExample = ({ test, handleClick }) => (
       <Route path="/topics" component={Topics}/>
     </div>
   </Router>
-)
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
 )
 
 const Topics = ({ match }) => (
@@ -64,14 +53,7 @@ const Topics = ({ match }) => (
   </div>
 )
 
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
-
 const mapProps = state => {
-  console.log(state)
   return {
     test: state.test
   }
